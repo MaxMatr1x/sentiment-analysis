@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediksi Sentimen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Prediksi Sentimen Ulasan</h2>
+    <form method="POST">
+        <label for="ulasan">Masukkan Teks Ulasan:</label>
+        <textarea name="ulasan" placeholder="Contoh: Aplikasi sudah cukup baik!" required>{{ text if text }}</textarea>
+        <button type="submit">Prediksi</button>
+    </form>
+
+    {% if label %}
+        <div class="result">
+            <h3>Hasil Prediksi: <span class="label">{{ label }}</span></h3>
+            <p><strong>Probabilitas Kelas:</strong></p>
+            <ul>
+                {% for cls, prob in probabilities.items() %}
+                    <li><strong>{{ cls }}:</strong> {{ "%.4f"|format(prob) }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
