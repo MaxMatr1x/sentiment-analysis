@@ -26,18 +26,3 @@ Project ini mengimplementasikan model klasifikasi teks yang digunakan untuk memp
 
 **Machine Learning Algorithm**
 - Multinomial Naive Bayes
-
-## Project Structure
-sentiment-analysis/
-│
-├── app.py
-├── model_prediksi_sentimen.pkl
-├── requirements.txt
-│
-├── templates/
-│ └── index.html
-│
-├── static/
-│ └── style.css
-│
-└── README.md
